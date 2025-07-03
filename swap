@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swap Two Variables</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e2f;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      background: #2a2a40;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00f2ff;
+      width: 700px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 80px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+         width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00f2ffea;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Swap Two Variables</h2>
+    <input type="number" id="varA" placeholder="enter the value of A">
+    <input type="number" id="varB" placeholder="enter the value of B">
+    <br>
+    <button onclick="swapValues()">Swap</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function swapValues() {
+      let a = document.getElementById('varA').value;
+      let b = document.getElementById('varB').value;
+
+      // Convert to numbers
+      a = Number(a);
+      b = Number(b);
+
+      // Swapping
+      let temp = a;
+      a = b;
+      b = temp;
+
+      document.getElementById('result').innerHTML =
+        `After swapping:<br> A = ${a}, B = ${b}`;
+    }
+  </script>
+</body>
+</html>
